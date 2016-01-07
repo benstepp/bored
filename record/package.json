@@ -1,0 +1,24 @@
+{
+  "name": "record",
+  "version": "1.0.0",
+  "description": "Record",
+  "main": "lib/index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha test/*_test.js test/**/*_test.js --harmony-proxies --reporter dot --require test/test_helper.js"
+  },
+  "keywords": [],
+  "author": "Benjamin Stepp",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-plugin-transform-decorators": "^6.3.13",
+    "babel-plugin-transform-decorators-legacy": "^1.3.1",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-register": "^6.3.13",
+    "chai": "^3.4.1",
+    "harmony-reflect": "^1.4.2",
+    "mocha": "^2.3.4"
+  }
+}
