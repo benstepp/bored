@@ -1,7 +1,7 @@
 {
-  "name": "Tays-Record",
+  "name": "Tays-Support",
   "version": "1.0.0",
-  "description": "Record",
+  "description": "Support",
   "main": "lib/index.js",
   "directories": {
     "test": "test"
