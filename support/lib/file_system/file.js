@@ -1,32 +1,21 @@
-import NodeFileSystem from 'fs'
-import Bluebird from 'bluebird'
+import FileSystem from './native'
+import { Base } from './base'
 
-const FileSystem = Bluebird.promisifyAll(NodeFileSystem)
 const UTF8 = 'utf-8'
 
-class File {
+class File extends Base {
 
   constructor (path) {
-    this.path = path
+    super(path)
     this.resolved = false
   }
 
   async resolve () {
     if (!this.resolved) {
-      this.stats = await this.check_file()
-      this.exists = this.validate_file_existence()
+      await this.check_file()
       this.content = await this.fetch_content()
       this.resolved = true
     }
-  }
-
-  validate_file_existence() {
-    return this.stats !== undefined
-  }
-
-  check_file () {
-    return FileSystem.statAsync(this.path)
-             .catch(error => {})
   }
 
   fetch_content() {
