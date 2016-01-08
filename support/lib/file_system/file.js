@@ -1,4 +1,4 @@
-import FileSystem from './native'
+import { FileSystem } from './native'
 import { Base } from './base'
 
 const UTF8 = 'utf-8'

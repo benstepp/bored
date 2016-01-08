@@ -1,35 +1,19 @@
-import { LoadPathError } from './load_path_error'
-import { Directory } from '../file_system'
+import { LoadPathSet } from './load_path_set'
 
 class Resolver {
 
   constructor(...load_paths) {
-    this.load_paths = load_paths
+    this.load_paths = new LoadPathSet(load_paths)
   }
 
   async resolve() {
-    this.map_paths_to_directories()
-    await this.resolve_directories()
-    await this.validate_directories()
+    await this.load_paths.resolve()
   }
 
-  map_paths_to_directories() {
-    this.load_paths = this.load_paths.map(load_path => {
-      return new Directory(load_path)
-    })
-  }
-
-   resolve_directories() {
-    return Promise.all(this.load_paths.map(directory => {
-      return directory.resolve()
-    }))
-  }
-
-  validate_directories() {
-    this.load_paths.forEach(directory => {
-      if (!directory.exists) {
-        throw new LoadPathError(directory.path, directory.error)
-      }
+  get files() {
+    const files = []
+    this.load_paths.forEach(load_path => {
+      files.push(...load_path.files)
     })
   }
 

@@ -1,4 +1,4 @@
-import FileSystem from './native'
+import { FileSystem } from './native'
 
 class Base {
 

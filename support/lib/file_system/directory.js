@@ -1,4 +1,5 @@
-import FileSystem from './native'
+import { FileSystem } from './native'
+import { File } from './file'
 import { Base } from './base'
 
 class Directory extends Base {
@@ -14,6 +15,10 @@ class Directory extends Base {
       this.files = await this.fetch_files()
       this.resolved = true
     }
+  }
+
+  resolve_with_files() {
+
   }
 
   validate_existence () {

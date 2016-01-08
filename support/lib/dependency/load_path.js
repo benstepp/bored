@@ -1,0 +1,5 @@
+class LoadPath {
+
+}
+
+export { LoadPath }

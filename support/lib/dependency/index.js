@@ -1,2 +1,5 @@
+export * from './file_resolver'
+export * from './load_path'
 export * from './load_path_error'
+export * from './load_path_set'
 export * from './resolver'

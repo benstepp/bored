@@ -1,0 +1,5 @@
+class NestedTestClass {
+
+}
+
+export { NestedTestClass }
