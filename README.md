@@ -36,5 +36,11 @@ Support.Dependency.DecoratorSet
 Support.Dependency.Context
 Support.Dependency.Script
 Support.Dependency.Decorator
-Support.Directory
-Support.File
+Support.FileSystem.Directory
+Support.FileSystem.File
+
+idea
+persistence: object of methods .save .find w/e
+mapper: save(obj) find(obj) w/e(obj)
+this.constructor.mapper[method](obj)
+

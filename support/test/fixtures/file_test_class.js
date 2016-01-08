@@ -1,0 +1,5 @@
+class FileTestClass {
+
+}
+
+export { FileTestClass }
