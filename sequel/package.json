@@ -1,0 +1,27 @@
+{
+  "name": "sequel",
+  "version": "0.0.1",
+  "description": "Sequel",
+  "main": "lib/index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha test/*_test.js test/**/*_test.js --harmony-proxies --reporter dot --require test/test_helper.js"
+  },
+  "keywords": [],
+  "author": "Benjamin Stepp",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-plugin-transform-async-to-generator": "^6.4.0",
+    "babel-plugin-transform-decorators": "^6.3.13",
+    "babel-plugin-transform-decorators-legacy": "^1.3.1",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.4.0",
+    "babel-plugin-transform-es2015-parameters": "^6.4.2",
+    "babel-plugin-transform-export-extensions": "^6.4.0",
+    "babel-register": "^6.3.13",
+    "chai": "^3.4.1",
+    "harmony-reflect": "^1.4.2",
+    "mocha": "^2.3.4"
+  }
+}
