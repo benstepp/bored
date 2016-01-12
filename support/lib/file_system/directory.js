@@ -1,5 +1,4 @@
 import { FileSystem } from './native'
-import { File } from './file'
 import { Base } from './base'
 
 class Directory extends Base {
@@ -9,7 +8,7 @@ class Directory extends Base {
     this.resolved = false
   }
 
-  resolve() {
+  resolve () {
     if (!this.resolved) {
       return this.check_file()
       .then(this.fetch_files.bind(this))
