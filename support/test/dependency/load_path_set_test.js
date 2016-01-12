@@ -19,11 +19,11 @@ describe('LoadPathSet', () => {
   })
 
   describe('resolve', () => {
-    it('converts load paths to directory objects', async () => {
+    it('converts load paths to loadpath objects', async () => {
       const load_path_set = new LoadPathSet(fixture_path)
       await load_path_set.resolve()
       load_path_set.load_paths.forEach(load_path => {
-        expect(load_path).to.be.instanceOf(Support.FileSystem.Directory)
+        expect(load_path).to.be.instanceOf(Support.Dependency.LoadPath)
       })
     })
 

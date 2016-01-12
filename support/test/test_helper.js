@@ -12,6 +12,5 @@ require('babel-register')({
 })
 
 global.Reflect = require('harmony-reflect')
-
 global.expect = require('chai').expect
 global.Support = require('../lib')

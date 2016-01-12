@@ -28,8 +28,9 @@ describe('Directory', () => {
     it('is an array of strings for a real directory', async () => {
       const directory = new Directory(fixture_path)
       await directory.resolve()
-      expect(directory.files).to.be.an('array')
-      directory.files.forEach(file => {
+      await console.log(directory)
+      await expect(directory.files).to.be.an('array')
+      await directory.files.forEach(file => {
         expect(file).to.be.a('string')
       })
     })

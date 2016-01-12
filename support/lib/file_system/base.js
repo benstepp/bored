@@ -7,9 +7,13 @@ class Base {
   }
 
   check_file () {
-    return FileSystem.statAsync(this.path)
-             .then(this.set_stats.bind(this))
-             .catch(this.handle_stats_error.bind(this))
+    if (this.stats === undefined) {
+      return FileSystem.statAsync(this.path)
+      .then(this.set_stats.bind(this))
+      .catch(this.handle_stats_error.bind(this))
+    } else {
+      return Promise.resolve()
+    }
   }
 
   set_stats (stats) {
@@ -26,6 +30,10 @@ class Base {
   handle_stats_error (error) {
     this.error = error
     this.exists = this.validate_existence()
+  }
+
+  is_directory() {
+    return this.stats && this.stats.isDirectory()
   }
 
 }

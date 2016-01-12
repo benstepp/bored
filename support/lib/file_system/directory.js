@@ -9,30 +9,29 @@ class Directory extends Base {
     this.resolved = false
   }
 
-  async resolve() {
+  resolve() {
     if (!this.resolved) {
-      await this.check_file()
-      this.files = await this.fetch_files()
-      this.resolved = true
+      return this.check_file()
+      .then(this.fetch_files.bind(this))
     }
-  }
-
-  resolve_with_files() {
-
   }
 
   validate_existence () {
     return super.validate_existence() && this.stats.isDirectory()
   }
 
-
-  fetch_files() {
+  fetch_files () {
     if (this.exists) {
       return this.read_directory()
+      .then(this.set_files.bind(this))
     }
   }
 
-  read_directory() {
+  set_files (files) {
+    this.files = files
+  }
+
+  read_directory () {
     return FileSystem.readdirAsync(this.path)
   }
 
