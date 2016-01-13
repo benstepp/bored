@@ -4,7 +4,7 @@ class FileResolver extends Base {
 
   resolve () {
     return this.check_file()
-    .then(this.directory_or_file.bind(this))
+    .then(() => this.directory_or_file())
   }
 
   directory_or_file () {
@@ -25,7 +25,7 @@ class FileResolver extends Base {
   get resolved_directory () {
     const directory = new Directory(this.path)
     directory.stats = this.stats
-    return directory.resolve()
+    return directory
   }
 
 }

@@ -22,7 +22,6 @@ class Directory extends Base {
   fetch_files () {
     if (this.exists) {
       return this.read_directory()
-      .then(this.set_files.bind(this))
     }
   }
 
@@ -32,6 +31,7 @@ class Directory extends Base {
 
   read_directory () {
     return FileSystem.readdirAsync(this.path)
+      .then(this.set_files.bind(this))
   }
 
 }

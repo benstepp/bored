@@ -16,6 +16,7 @@ describe('LoadPath', () => {
       await load_path.resolve()
 
       expect(load_path.files).to.not.equal(undefined)
+      expect(load_path.files).to.be.a('array')
     })
   })
 })
