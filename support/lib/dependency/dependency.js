@@ -33,6 +33,11 @@ class Dependency {
     }
   }
 
+  run (context) {
+    const runable_context = context.contextified_sandbox
+    return this.script.runInContext(runable_context)
+  }
+
 }
 
 export { Dependency }

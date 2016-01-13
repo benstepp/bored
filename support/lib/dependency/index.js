@@ -1,3 +1,5 @@
+export * from './context'
+export * from './dependencies'
 export * from './dependency'
 export * from './file_resolver'
 export * from './load_path'
