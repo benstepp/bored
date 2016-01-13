@@ -35,8 +35,12 @@ class ModelFactory {
   define_models () {
     for (let dependency in this.dependencies.dependencies) {
       this.dependencies.get(dependency.replace(/\.js$/, ''))
-      .then((klass) => console.log(klass))
+      .then(klass => this.define_klass(klass))
     }
+  }
+
+  define_klass (klass) {
+    console.log(klass)
   }
 
   get (model_name) {
