@@ -18,6 +18,10 @@ class Dependencies {
     .then(result => result)
   }
 
+  get dependencies () {
+    return this.resolver.dependencies
+  }
+
 }
 
 export { Dependencies }

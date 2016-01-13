@@ -1,3 +1,3 @@
-class User extends Record.Base {
+class User extends Record.Core {
 
 }

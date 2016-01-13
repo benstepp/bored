@@ -19,6 +19,13 @@ class Inflector {
     .toLowerCase()
   }
 
+  static camelize (string) {
+    return string
+    .replace('.js', '')
+    .replace(Path.sep, '.')
+    .replace(/(\b[a-z])/g, match => match.toUpperCase())
+  }
+
 }
 
 export { Inflector }

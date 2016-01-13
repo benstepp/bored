@@ -31,12 +31,5 @@ new ApplicationContext
   }
 
 Framework.Application
-  - new RecordInstance
-Support.Dependency.Resolver
-Support.Dependency.Context
-Support.Dependency.Script
-Support.Dependency.Decorator
-Support.Dependency.LoadPathSet
-Support.Dependency.LoadPath
-Support.FileSystem.Directory
-Support.FileSystem.File
+  - context = new Context
+  - new RecordFactory(context, ['app/models'])
