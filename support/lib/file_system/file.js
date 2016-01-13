@@ -28,6 +28,10 @@ class File extends Base {
     return FileSystem.readFileAsync(this.path, UTF8)
   }
 
+  set_short_path(path) {
+    this.short_path = this.path.replace(path, '').replace(/^\//, '')
+  }
+
 }
 
 export { File }

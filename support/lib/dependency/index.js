@@ -1,3 +1,4 @@
+export * from './dependency'
 export * from './file_resolver'
 export * from './load_path'
 export * from './load_path_error'

@@ -12,7 +12,8 @@ class LoadPathSet {
   }
 
   attach_files () {
-    this.files = this.load_paths.map(load_path => load_path.files)
+    this.files = []
+    this.load_paths.forEach(load_path => this.files.push(...load_path.files))
   }
 
 }

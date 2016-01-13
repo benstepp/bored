@@ -48,6 +48,7 @@ class Walker {
    */
   attach_file (file_or_directory) {
     if (file_or_directory instanceof File) {
+      file_or_directory.set_short_path(this.parent.directory.path)
       return this.files.push(file_or_directory)
     } else if (file_or_directory instanceof Directory) {
       return this.walk_nested_directory(file_or_directory)
