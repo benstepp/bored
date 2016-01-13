@@ -1,8 +1,5 @@
-import * as Dependency from './dependency'
-export { Dependency }
+export * as Dependency from './dependency'
 
-import * as FileSystem from './file_system'
-export { FileSystem }
+export * as FileSystem from './file_system'
 
-import * as Meta from './meta'
-export { Meta }
+export * as Meta from './meta'

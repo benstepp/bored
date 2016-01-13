@@ -20,6 +20,7 @@
     "babel-plugin-transform-es2015-modules-commonjs": "^6.4.0",
     "babel-plugin-transform-es2015-parameters": "^6.4.2",
     "babel-plugin-transform-es2015-spread": "^6.4.0",
+    "babel-plugin-transform-export-extensions": "^6.4.0",
     "babel-register": "^6.3.13",
     "chai": "^3.4.1",
     "harmony-reflect": "^1.4.2",

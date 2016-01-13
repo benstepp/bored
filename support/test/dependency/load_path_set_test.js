@@ -3,6 +3,7 @@ import Path from 'path'
 const LoadPathSet = Support.Dependency.LoadPathSet
 const LoadPathError = Support.Dependency.LoadPathError
 const fixture_path = Path.resolve(__dirname, '..', 'fixtures')
+const fixture_two_path = Path.resolve(__dirname, '..', 'fixtures_two')
 
 describe('LoadPathSet', () => {
   it('exists as a class', () => {
@@ -37,6 +38,16 @@ describe('LoadPathSet', () => {
         expect(error).to.not.equal(undefined)
         expect(error).to.be.instanceOf(LoadPathError)
       }
+    })
+  })
+
+  describe('files', () => {
+    it('combines all files from load paths', async () => {
+      const load_path_set = new LoadPathSet(fixture_path, fixture_two_path)
+      await load_path_set.resolve()
+
+      expect(load_path_set.files).to.not.equal(undefined)
+      expect(load_path_set.files).to.be.a('array')
     })
   })
 })

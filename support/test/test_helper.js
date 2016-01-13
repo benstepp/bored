@@ -7,7 +7,8 @@ require('babel-register')({
     'syntax-object-rest-spread',
     'transform-es2015-spread',
     'transform-es2015-modules-commonjs',
-    'transform-es2015-parameters'
+    'transform-es2015-parameters',
+    'transform-export-extensions'
   ]
 })
 
